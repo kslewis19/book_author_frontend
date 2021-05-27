@@ -30,7 +30,8 @@ export default function BookInput(props) {
         props.setTitle(title)
     }
     function Library() {
-        if (library != null) {
+        console.log(library)
+        if (library != null, library.length != 0) {
             return (
                 <div>
                     { library.map((book, index) => (
