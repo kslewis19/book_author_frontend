@@ -41,6 +41,21 @@ export default function BookCard(props) {
             });
 
     }
+    const deleteBook = () => {
+        const axios = require('axios');
+
+        axios.post('http://localhost:8000/delete', {
+            title: props.title,
+            author: props.author,
+            image: props.image
+        })
+            .then((response) => {
+                console.log(response);
+            }, (error) => {
+                console.log(error);
+            });
+
+    }
 
 
     return (
@@ -81,7 +96,7 @@ export default function BookCard(props) {
                                     <IconButton
                                         color="primary"
                                         onClick={() => {
-
+                                            deleteBook()
                                             console.log("deleted")
                                         }}
                                     >
