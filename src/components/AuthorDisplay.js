@@ -13,6 +13,12 @@ export default function AuthorDisplay (props){
             >
                 Try Again
                     </Button>
+
+                <h3>Not It? Heres some other authors for the search '{props.title}'</h3>
+
+                {props.books.map((book, index) => (
+                    <li> {book.volumeInfo.title}  by {book.volumeInfo.authors}</li>
+                ))}
         </div>
     )
 }

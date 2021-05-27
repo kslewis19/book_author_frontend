@@ -3,9 +3,10 @@ import { useState } from 'react';
 
 
 export default function BookInput(props) {
-    const [title, setTitle] = useState('')
+    const [title, setTitle] = useState(null)
 
     const handleSubmit = () => {
+        console.log(title)
         props.setTitle(title)
     }
     return (
@@ -16,6 +17,7 @@ export default function BookInput(props) {
                 variant="outlined"
                 value={title}
                 onChange={(e) => {
+
                     setTitle(e.target.value)
                 }}
             />

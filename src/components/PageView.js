@@ -23,6 +23,7 @@ export default function PageView() {
     const classes = useStyles();
     const [title, setTitle] = useState(null)
     const [author, setAuthor] = useState("a name")
+    const [books, setBooks] = useState([])
     useEffect(() => {
 
         const fetchAuthor = () => {
@@ -34,6 +35,7 @@ export default function PageView() {
                 .then(response => {
                     console.log(response.data.author);
                     setAuthor(response.data.author)
+                    setBooks(response.data.books)
                 }, error => {
                     console.log(error);
                 });
@@ -48,7 +50,7 @@ export default function PageView() {
         <div className={classes.container}>
             <h1>Find An Author</h1>
             <div className={classes.main}>
-                {title == null ? <BookInput setTitle={setTitle} /> : <AuthorDisplay title={title} author={author} setTitle={setTitle} />}
+                {(title == null || author == "Malka Older") ? <BookInput setTitle={setTitle} /> : <AuthorDisplay title={title} author={author} setTitle={setTitle} books={books} />}
             </div>
         </div>
     )
