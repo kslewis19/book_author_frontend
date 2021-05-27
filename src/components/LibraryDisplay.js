@@ -2,10 +2,26 @@ import { Button } from '@material-ui/core';
 import BookCard from './BookCard'
 import { useEffect, useState, } from 'react';
 import NavBar from './NavBar'
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+        width: '100%',
+        alignItems: "center"
+
+    },
+    library: {
+        maxWidth: '75%',
+        display: "flex",
+        alignContent: "center",
+        justifyContent: "center"
+
+    }
+
+}));
 
 export default function LibraryDisplay(props) {
-
+    const classes = useStyles();
     const [library, setLibrary] = useState([])
     useEffect(() => {
 
@@ -29,9 +45,9 @@ export default function LibraryDisplay(props) {
         console.log(library)
         if (library != null, library.length != 0) {
             return (
-                <div>
+                <div style={{ width: "75%" }}>
                     { library.map((book, index) => (
-                        <BookCard title={book.title} author={book.author} image={book.image} />
+                        <BookCard title={book.title} author={book.author} image={book.image} isLibrary={true} />
 
                     ))}
                 </div>
@@ -42,9 +58,11 @@ export default function LibraryDisplay(props) {
         )
     }
     return (
-        <div>
+        <div className={classes.root}>
             <NavBar />
-            <Library />
+            <div className={classes.library}>
+                <Library />
+            </div>
         </div>
     )
 }

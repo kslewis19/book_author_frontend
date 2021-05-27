@@ -7,13 +7,13 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import { MdCenterFocusStrong } from "react-icons/md";
-
+import { FcPlus } from "react-icons/fc";
+import { BsFillTrashFill } from "react-icons/bs";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
-        maxWidth: '36ch',
+        maxWidth: '45ch',
         backgroundColor: theme.palette.background.paper,
     },
     inline: {
@@ -66,15 +66,29 @@ export default function BookCard(props) {
 
                                     </Typography>
                                 </span>
-                                <IconButton
-                                    color="primary"
-                                    onClick={() => {
-                                        addBook()
-                                        console.log("added")
-                                    }}
-                                >
-                                    <MdCenterFocusStrong />
-                                </IconButton>
+                                {!props.isLibrary &&
+                                    <IconButton
+                                        color="primary"
+                                        onClick={() => {
+                                            addBook()
+                                            console.log("added")
+                                        }}
+                                    >
+                                        <FcPlus />
+                                    </IconButton>
+                                }
+                                {props.isLibrary &&
+                                    <IconButton
+                                        color="primary"
+                                        onClick={() => {
+
+                                            console.log("deleted")
+                                        }}
+                                    >
+                                        <BsFillTrashFill style={{ color: "red" }} />
+                                    </IconButton>
+                                }
+
                             </span>
 
                         </React.Fragment>
