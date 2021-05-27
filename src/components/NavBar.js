@@ -31,7 +31,7 @@ export default function Navbar() {
             history.push("/")
           }}
         >
-          Home
+          Find Book
         </Button>
         {!location.pathname.includes("/library") ? (
           <Button color="primary"

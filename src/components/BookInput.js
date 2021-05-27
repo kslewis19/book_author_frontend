@@ -29,22 +29,6 @@ export default function BookInput(props) {
         //console.log(title)
         props.setTitle(title)
     }
-    function Library() {
-        console.log(library)
-        if (library != null, library.length != 0) {
-            return (
-                <div>
-                    { library.map((book, index) => (
-                        <BookCard title={book.title} author={book.author} image={book.image} />
-
-                    ))}
-                </div>
-            )
-        }
-        return (
-            <div>There is nothing in your library</div>
-        )
-    }
     return (
         <div style={{ display: "flex", flexDirection: "column", alignContent: "center" }}>
             <div style={{ display: "flex", alignContent: "center" }}>
@@ -68,7 +52,6 @@ export default function BookInput(props) {
                     </Button>
 
             </div>
-            <Library />
 
         </div>
     )

@@ -2,6 +2,7 @@ import BookInput from "./BookInput";
 import { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AuthorDisplay from './AuthorDisplay'
+import Navbar from "./NavBar";
 
 const useStyles = makeStyles(() => ({
     main: {
@@ -48,7 +49,8 @@ export default function PageView() {
 
     return (
         <div className={classes.container}>
-            <h1>Find An Author</h1>
+            <Navbar />
+            <h1>Find A Book</h1>
             <div className={classes.main}>
                 {(title == null || author == "Malka Older") ? <BookInput setTitle={setTitle} /> : <AuthorDisplay title={title} author={author} setTitle={setTitle} books={books} />}
             </div>
