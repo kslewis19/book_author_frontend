@@ -2,7 +2,7 @@ import { Button } from '@material-ui/core';
 import BookCard from './BookCard'
 
 export default function AuthorDisplay (props){
-
+   
     return(
         <div style={{display: "flex", flexDirection:" column"}}>
             The author of '{props.title}' is {props.author}!

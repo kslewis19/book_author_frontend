@@ -7,6 +7,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import { MdCenterFocusStrong } from "react-icons/md";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,6 +23,26 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BookCard(props) {
     const classes = useStyles();
+
+
+    const addBook = () => {
+
+        const axios = require('axios');
+
+        axios.post('http://localhost:8000/book', {
+            title: props.title,
+            author: props.author,
+            image: props.image
+        })
+            .then((response) => {
+                console.log(response);
+            }, (error) => {
+                console.log(error);
+            });
+
+    }
+
+
     return (
         <div>
             <ListItem alignItems="flex-start">
@@ -45,7 +66,15 @@ export default function BookCard(props) {
 
                                     </Typography>
                                 </span>
-
+                                <IconButton
+                                    color="primary"
+                                    onClick={() => {
+                                        addBook()
+                                        console.log("added")
+                                    }}
+                                >
+                                    <MdCenterFocusStrong />
+                                </IconButton>
                             </span>
 
                         </React.Fragment>
