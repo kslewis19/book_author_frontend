@@ -1,9 +1,10 @@
-import { TextField, Button } from '@material-ui/core';
-import { useState, useEffect } from 'react';
+import { Button } from '@material-ui/core';
 import BookCard from './BookCard'
+import { useEffect, useState, } from 'react';
+import NavBar from './NavBar'
 
-export default function BookInput(props) {
-    const [title, setTitle] = useState("")
+
+export default function LibraryDisplay(props) {
 
     const [library, setLibrary] = useState([])
     useEffect(() => {
@@ -24,11 +25,6 @@ export default function BookInput(props) {
         fetchLibrary()
         //console.log("loaded")
     }, [])
-
-    const handleSubmit = () => {
-        //console.log(title)
-        props.setTitle(title)
-    }
     function Library() {
         console.log(library)
         if (library != null, library.length != 0) {
@@ -46,30 +42,9 @@ export default function BookInput(props) {
         )
     }
     return (
-        <div style={{ display: "flex", flexDirection: "column", alignContent: "center" }}>
-            <div style={{ display: "flex", alignContent: "center" }}>
-                <TextField
-
-                    label="enter book title"
-                    variant="outlined"
-                    value={title}
-                    onChange={(e) => {
-
-                        setTitle(e.target.value)
-                    }}
-                />
-
-                <Button
-                    variant="contained"
-                    color="inherit"
-                    onClick={handleSubmit}
-                >
-                    Enter
-                    </Button>
-
-            </div>
+        <div>
+            <NavBar />
             <Library />
-
         </div>
     )
 }
