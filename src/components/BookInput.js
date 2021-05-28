@@ -15,9 +15,10 @@ export default function BookInput(props) {
         <div style={{ display: "flex", flexDirection: "column", alignContent: "center" }}>
             <div style={{ display: "flex", alignContent: "center" }}>
                 <TextField
-
+                    style={{ backgroundColor: "white" }}
                     label="enter book title"
-                    variant="outlined"
+                    id="filled-start-adornment"
+                    variant="filled"
                     value={title}
                     onChange={(e) => {
 

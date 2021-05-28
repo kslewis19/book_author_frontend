@@ -50,7 +50,9 @@ export default function PageView() {
     return (
         <div className={classes.container}>
             <Navbar />
-            <h1>Find A Book</h1>
+            <div style={{ backgroundColor: "lightgray", marginTop: 30, paddingLeft: 30, paddingRight: 30 }}>
+                <h1 style={{ fontFamily: 'Open Sans', color: "gray", size: 450 }}>Find A Book</h1>
+            </div>
             <div className={classes.main}>
                 {(title === null || author === "Malka Older") ? <BookInput setTitle={setTitle} /> : <AuthorDisplay title={title} author={author} setTitle={setTitle} books={books} />}
             </div>

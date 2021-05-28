@@ -7,15 +7,25 @@ import Loader from "react-loader-spinner"
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        display: "flex",
         width: '100%',
-        alignItems: "center"
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
+
 
     },
     library: {
-        maxWidth: '75%',
+        width: '45%',
         display: "flex",
         alignContent: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        backgroundColor: "white",
+        paddingBottom: 30,
+        marginTop: 100,
+
+
+
 
     }
 

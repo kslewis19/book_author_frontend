@@ -15,7 +15,7 @@ import EditIcon from '@material-ui/icons/Edit';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '100%',
+        width: '75%',
         maxWidth: '45ch',
         backgroundColor: theme.palette.background.paper,
     },
@@ -163,6 +163,7 @@ export default function BookCard(props) {
                         label="enter description"
                         variant="outlined"
                         value={desc}
+                        style={{ width: 550 }}
                         onChange={(e) => {
 
                             setDesc(e.target.value)
@@ -173,7 +174,7 @@ export default function BookCard(props) {
                         color="inherit"
                         onClick={editBook}
                     >
-                        Subtmit
+                        Submit
                  </Button>
 
                 </div>}
