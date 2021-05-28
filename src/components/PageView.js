@@ -35,6 +35,7 @@ export default function PageView() {
             axios.get(url)
                 .then(response => {
                     console.log(response.data.author);
+                    console.log(response.data.books)
                     setAuthor(response.data.author)
                     setBooks(response.data.books)
                 }, error => {
