@@ -98,8 +98,8 @@ export default function BookCard(props) {
 
             {!isDeleted && <div>
                 <ListItem alignItems="flex-start">
-                    <ListItemAvatar>
-                        <Avatar alt="Remy Sharp" variant="square" className={classes.square} src={props.image} />
+                    <ListItemAvatar >
+                        <Avatar style={{ height: '100px', width: '70px', paddingRight: 20 }} alt="Remy Sharp" variant="square" className={classes.square} src={props.image} />
                     </ListItemAvatar>
                     <ListItemText
                         component={'span'}
