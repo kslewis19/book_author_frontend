@@ -43,6 +43,7 @@ export default function BookCard(props) {
         })
             .then((response) => {
                 console.log(response);
+                setIsDeleted(true)
             }, (error) => {
                 console.log(error);
             });
@@ -159,7 +160,7 @@ export default function BookCard(props) {
                 {props.isLibrary && !isEditing && <div>Desscription : {desc}</div>}
                 {isEditing && <div>
                     <TextField
-                        label="enter notes"
+                        label="enter description"
                         variant="outlined"
                         value={desc}
                         onChange={(e) => {
