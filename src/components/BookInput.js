@@ -1,29 +1,11 @@
 import { TextField, Button } from '@material-ui/core';
-import { useState, useEffect } from 'react';
-import BookCard from './BookCard'
+import { useState } from 'react';
+
 
 export default function BookInput(props) {
     const [title, setTitle] = useState("")
 
-    const [library, setLibrary] = useState([])
-    useEffect(() => {
 
-        const fetchLibrary = () => {
-            const url = new URL("http://localhost:8000/library");
-
-            const axios = require('axios');
-            axios.get(url)
-                .then(response => {
-                    console.log(response.data);
-                    setLibrary(response.data.library)
-                }, error => {
-                    console.log(error);
-                });
-
-        }
-        fetchLibrary()
-        //console.log("loaded")
-    }, [])
 
     const handleSubmit = () => {
         //console.log(title)

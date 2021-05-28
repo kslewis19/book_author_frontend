@@ -41,7 +41,6 @@ export default function PageView() {
                 }, error => {
                     console.log(error);
                 });
-
         }
         fetchAuthor()
     }, [title])
@@ -53,7 +52,7 @@ export default function PageView() {
             <Navbar />
             <h1>Find A Book</h1>
             <div className={classes.main}>
-                {(title == null || author == "Malka Older") ? <BookInput setTitle={setTitle} /> : <AuthorDisplay title={title} author={author} setTitle={setTitle} books={books} />}
+                {(title === null || author === "Malka Older") ? <BookInput setTitle={setTitle} /> : <AuthorDisplay title={title} author={author} setTitle={setTitle} books={books} />}
             </div>
         </div>
     )

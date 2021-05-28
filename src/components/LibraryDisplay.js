@@ -1,4 +1,3 @@
-import { Button } from '@material-ui/core';
 import BookCard from './BookCard'
 import { useEffect, useState, } from 'react';
 import NavBar from './NavBar'
@@ -43,11 +42,11 @@ export default function LibraryDisplay(props) {
     }, [])
     function Library() {
         console.log(library)
-        if (library != null, library.length != 0) {
+        if (library !== null && library.length !== 0) {
             return (
                 <div style={{ width: "75%" }}>
                     { library.map((book, index) => (
-                        <BookCard title={book.title} author={book.author} image={book.image} isLibrary={true} />
+                        <BookCard title={book.title} author={book.author} image={book.image} isLibrary={true} desc={book.desc} />
 
                     ))}
                 </div>
